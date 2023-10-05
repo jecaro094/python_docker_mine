@@ -29,7 +29,7 @@ class LocalConfiguration(BaseSettings):
 
 
 print("Current working directory", os.getcwd())
-config = LocalConfiguration()
+config = Configuration()
 
 logging.config.fileConfig(config.LOGGING_PATH, disable_existing_loggers=False)
 log = logging.getLogger(__name__)

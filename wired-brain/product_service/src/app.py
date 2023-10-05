@@ -57,7 +57,7 @@ def get_product(id):
         product = Product.find_by_id(id)
         if product:
             return jsonify(product.json)
-        log.warning(f"GET /product/{id}: Product not found")
+        log.warning(f"GET /product/{id}: Product not foundd")
         return f"Product with id {id} not found", 404
     except exc.SQLAlchemyError:
         log.exception(f"An exception occurred while retrieving product {id}")

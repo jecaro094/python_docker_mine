@@ -21,10 +21,16 @@ jobs:
       - name: Show dockerfile content
         run: |
           cat ${{ github.workspace }}/wired-brain/product_service/Dockerfile
-      - name: Build docker image from dockerfile
-        working-directory: ${{ github.workspace }}/wired-brain/product_service
+      # It lasts a little bit, So I will only consider this step when DEPLOYING IN THE FUTURE
+      # - name: Build docker image from dockerfile
+      #   working-directory: ${{ github.workspace }}/wired-brain/product_service
+      #   run: |
+      #     docker build -f ${{ github.workspace }}/wired-brain/product_service/Dockerfile .
+      
+      - name: Requirements
+        working-directory: ${{ github.workspace }}/wired-brain
         run: |
-          docker build -f ${{ github.workspace }}/wired-brain/product_service/Dockerfile .
+          make requirements
       - name: Format and lint
         working-directory: ${{ github.workspace }}/wired-brain
         run: |

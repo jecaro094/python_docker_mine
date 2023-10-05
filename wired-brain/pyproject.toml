@@ -1,0 +1,20 @@
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--doctest-modules",
+    "-vv",
+#We use the "-s" flag to display logs and prints in the execution of the tests
+#    "-s",
+]
+testpaths = [
+    "test",
+]
+pythonpath = [
+  "/home/jcr/Src/github/python_docker_mine/wired-brain/product_service/src",
+]

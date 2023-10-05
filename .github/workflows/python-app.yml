@@ -21,4 +21,7 @@ jobs:
       - name: Show dockerfile content
         run: |
           cat ${{ github.workspace }}/wired-brain/product_service/Dockerfile
+      - name: Build docker image from dockerfile
+        run: |
+          docker build -f ${{ github.workspace }}/wired-brain/product_service/Dockerfile .
       - run: echo "🍏 This job's status is ${{ job.status }}."
